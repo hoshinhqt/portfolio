@@ -1,0 +1,145 @@
+.main-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 40px);
+  width: 100%;
+}
+
+.main-nav {
+  //border: 1px solid red;
+  display: grid;
+  grid-template-columns: repeat(6, minmax(100px, 200px));
+  grid-template-rows: repeat(3, minmax(100px, 200px));
+  grid-auto-flow: row;
+  grid-auto-columns: minmax(100px, 200px);
+  grid-auto-rows: minmax(100px, 200px);
+  justify-content: center;
+
+  // grid-template-columns: repeat(auto-fill, 200px);
+  // grid-template-rows: repeat(3, minmax(100px, 200px));
+  
+  width: 1200px;
+  //max-width: 100%;
+
+  @media only screen and (max-width: $bp-large) {
+    grid-template-columns: repeat(4, minmax(100px, 200px));
+    grid-auto-flow: dense;
+  }
+
+  @media only screen and (max-width: $bp-medium) {
+    grid-template-columns: repeat(3, minmax(100px, 200px));
+    grid-auto-rows: 150px;
+    grid-auto-columns: 150px;
+  }
+
+  @media only screen and (max-width: $bp-small) {
+    grid-template-rows: repeat(2, 150px);
+    
+  }
+  
+  &__title {
+    grid-column: 1 / span 3;
+
+    @media only screen and (max-width: $bp-small) {
+      grid-column: span 2;
+    }
+  }
+
+  &__block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: $color-primary;
+    color: $color-white;
+    padding: 20px;
+    
+    &--about {
+      background-color: darken($color-primary, 10%);
+    }
+
+    &--facts {
+      background-color: $color-primary-light;
+    }
+    
+    &--portfolio {
+      grid-row: 2;
+      background-color: darken($color-primary, 15%);
+    }
+    
+    &--skills {
+      grid-column: 2;
+    }
+    
+    &--contact {
+      grid-column: 3;
+      background-color: darken($color-primary, 10%);
+    }
+    
+    &-pic {
+      background-size: cover;
+      filter: grayscale(100%);
+      opacity: 0.8;
+
+      &--1 {
+        background: url(https://source.unsplash.com/200x200/?technology);
+      }  
+      &--2 {
+        background: url(https://source.unsplash.com/200x200/?programming);
+      }
+      &--3 {
+        background: url(https://source.unsplash.com/200x200/?laptop);
+      }  
+      &--4 {
+        background: url(https://source.unsplash.com/200x200/?computer);
+      }
+      &--5 {
+        background: url(https://source.unsplash.com/200x200/?internet);
+      }  
+      &--6 {
+        background: url(https://source.unsplash.com/200x200/?workspace);
+      }
+    }
+  }
+
+  &__link {
+    
+    &:link,
+    &:visited {
+      transform: scale(1) rotate(0);
+      transition: all 0.3s;
+    }  
+    &:hover,
+    &:active {
+      transform: scale(1.1) rotate(-6deg);
+      background-color: $color-primary-darkest;
+      z-index: 200;
+      color: $color-white;
+    }
+  }  
+
+  &__contacts {
+    background-color: white;
+    grid-column-end: -1;
+    align-self: end;
+    justify-self: end;
+    display: flex;
+    flex-direction: row;
+    & > * {
+      margin-left: 1.2rem;
+    }
+  }
+
+}
+
+.icon {
+  fill: white;
+  width: 50%;
+  height: 50%;
+  margin-bottom: 10px;
+  @media only screen and (max-width: $bp-medium) {
+    width: 65%;
+    height: 65%;    
+  }
+}

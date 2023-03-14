@@ -1,0 +1,232 @@
+.modal-about {
+	padding: 30px;
+	text-align: center;
+
+    &--first-page,
+    &--second-page {
+        width: 70%;
+        margin: 0 auto;
+
+        @media only screen and (max-width: $bp-small) {
+            width: 100%;
+        }
+
+    }
+
+
+	&__heading-big {
+		font-family: $font-display;
+		text-transform: uppercase;
+		font-size: 5rem;
+		text-align: center;
+		line-height: 5.2rem;
+		margin: 20px 0;
+	}
+
+	
+    &__line {
+        display: block;
+        width: 100%;
+        height: 3px;
+        background-color: white;
+        margin: 20px auto;
+    }
+
+    h4 {
+        font-family: $font-stack;
+        font-weight: bold;
+        font-size: 3rem;
+        text-transform: uppercase;
+    }
+
+    h5 {
+        font-family: $font-stack;
+        font-weight: 300;
+        font-size: 2.5rem;
+    }
+
+    &__profile-pic {
+        width: 15rem;
+        height: 15rem;
+        background-image: url(../img/mina-pic.jpg);
+        background-size: cover;
+        filter: grayscale(100%);
+        // opacity: 0.9;
+        display: inline-block;
+        float: left;
+        border: 2px solid $color-white;
+        border-radius: 4px;
+        margin: 0 1rem 1rem 0;
+    }
+
+
+    &__buttons-list {
+        display: grid;
+        grid-auto-flow: column;
+        grid-gap: 20px;
+        width: 70%;
+        margin: 30px auto 20px;
+        font-family: $font-display;
+        font-weight: bold;
+        font-size: 1.6rem;
+    }
+
+   
+}
+
+
+.modal-portfolio {
+    background-color: $color-white;
+    color: $color-grey-dark;
+    text-align: left;
+    padding: 20px; 
+    display: grid;
+    grid-gap: 15px;
+    grid-template-columns: 1fr 1fr; 
+
+    &__item {
+        display: grid;
+        grid-gap: 10px;
+        grid-template-columns: auto 1fr;        
+    }
+
+    &__num {
+        background-color: $color-primary;
+        color: $color-white;
+        padding: 2rem;
+        font-size: 2.5rem;
+    }
+
+    &__project {
+        border: 2px solid $color-primary;
+        padding: 10px;
+    }
+    
+    p {
+        padding-bottom: 10px;
+    }
+
+    @media only screen and (max-width: $bp-small) {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+.modal-skills {
+    background-color: $color-white;
+    color: $color-grey-dark;
+    text-align: center;
+    padding: 20px; 
+    
+    &__container {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-gap: 15px;   
+
+        @media only screen and (max-width: $bp-small) {
+            grid-template-columns: 1fr;
+        } 
+    }
+    
+    &__box {
+        border: 2px solid $color-primary;    
+        border-bottom: 6px solid $color-primary;
+
+        p {
+            text-align: center;
+            padding: 0 15px 10px;    
+        }
+        
+    }
+
+    &__icon {
+        background-color: $color-primary;
+        padding: 20px;
+        margin-bottom: 25px;
+        color: $color-white;
+    }
+
+    &__svg-main-icon {
+        width: 60px;
+        height: 60px;
+        fill: $color-white;
+        margin-bottom: 8px;
+    }
+    
+    &__skills-icons {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        align-items: center;
+        // display: grid;
+        // grid-template-columns: 1fr 1fr;
+        // justify-items: center;
+        // grid-gap: 15px;
+        margin-bottom: 20px;
+
+        img {
+            width: 50px;
+            height: auto; 
+            margin: 10px;   
+        }
+        
+    }
+
+    @media only screen and (max-width: $bp-small) {
+        grid-template-columns: 1fr;
+        padding: 20px 40px;
+    }
+}
+
+
+.modal-facts {
+    padding: 30px;
+    text-align: left;
+    font-size: 1.8rem;
+    &__list-item {
+        margin-bottom: 15px;
+        padding-left: 20px;
+        &::before {
+            display: inline-block;
+            content: url(../img/baseline-done-24px.svg);
+            width: 20px;
+            height: 20px;
+            transform: translateY(5px);
+            margin-right: 15px;
+        }
+    }
+}
+
+
+.modal-contact {
+    background-color: $color-white;
+    color: $color-grey-dark;
+    padding: 30px; 
+    
+
+    &__data {
+        margin: 0 auto;
+        text-align: center;
+
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-bottom: 3rem;
+
+        & > *:not(last-child) {
+            margin-left: 1.5rem;
+        } 
+
+        svg {
+            fill: $color-primary;
+            transform: translateY(0.5rem);
+            display: inline-block;
+        }
+    }
+
+    form {
+        margin: 0 auto;
+        text-align: left;
+    }
+}
